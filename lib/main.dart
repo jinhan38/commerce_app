@@ -1,4 +1,3 @@
-import 'package:commerce_app/screen/home/home_screen.dart';
 import 'package:commerce_app/screen/main/main_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
       home: const MainScreen(),

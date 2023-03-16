@@ -60,7 +60,7 @@ class HomeWidgets {
       crossAxisCount: 4,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       children: List.generate(iconList.length, (index) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -89,7 +89,7 @@ class HomeWidgets {
   Widget subTitle({required String text}) {
     return Row(
       children: [
-        const SizedBox(width: 24),
+        const SizedBox(width: 16),
         Text(
           text,
           style: const TextStyle(
@@ -107,7 +107,7 @@ class HomeWidgets {
       child: ListView.separated(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.only(left: 24,right: 24,top: 20),
+        padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
         itemBuilder: (context, index) {
           ProductModel product = productList[index];
           return SizedBox(
@@ -119,7 +119,7 @@ class HomeWidgets {
                   product.image,
                   height: 170,
                   width: double.infinity,
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 ),
                 const SizedBox(height: 4),
                 Text(
@@ -129,7 +129,6 @@ class HomeWidgets {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                
                 Text("${nFormat.format(product.price)}원"),
                 Text("평점 ${product.reviewRating} (${product.reviewCount})"),
               ],
@@ -141,6 +140,50 @@ class HomeWidgets {
         },
         itemCount: productList.length,
       ),
+    );
+  }
+
+  Widget productGrid({required List<ProductModel> productList}) {
+    return GridView.count(
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: 2,
+      shrinkWrap: true,
+      childAspectRatio: 0.5,
+      padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
+      crossAxisSpacing: 16,
+      children: List.generate(productList.length, (index) {
+        ProductModel product = productList[index];
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              product.image,
+              height: 200,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(height: 4),
+            Text(
+              product.name,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            Text("${nFormat.format(product.price)}원"),
+            Text("평점 ${product.reviewRating} (${product.reviewCount})"),
+          ],
+        );
+      }),
+    );
+  }
+
+  Widget event({required String eventImage}) {
+    return Image.asset(
+      eventImage,
+      height: 200,
+      width: double.infinity,
+      fit: BoxFit.cover,
     );
   }
 }

@@ -23,4 +23,6 @@ class AssetPath {
   static const productManSuit = "assets/product_man_suit.jpg";
   static const productShoes = "assets/product_shoes.jpg";
   static const productWomen = "assets/product_women.jpg";
+
+  static const event = "assets/event.jpg";
 }

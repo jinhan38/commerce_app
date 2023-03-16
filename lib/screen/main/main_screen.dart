@@ -21,8 +21,13 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        title: const Text("Commerce"),
+        title: const Text(
+          "Fashion Commerce",
+          style: TextStyle(color: Colors.black),
+        ),
+        elevation: 0,
       ),
       body: IndexedStack(
         index: _currentIndex,

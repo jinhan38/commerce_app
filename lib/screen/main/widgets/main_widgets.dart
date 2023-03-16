@@ -17,7 +17,7 @@ class MainWidgets {
         ),
       ],
       currentIndex: currentIndex,
-      selectedItemColor: Colors.blue,
+      selectedItemColor: Colors.indigo,
       onTap: (value) {
         onTap(value);
       },
