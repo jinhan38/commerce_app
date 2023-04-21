@@ -108,7 +108,6 @@ class HomeWidgets {
     return SizedBox(
       height: 300,
       child: ListView.separated(
-        shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
