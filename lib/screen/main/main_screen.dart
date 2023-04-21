@@ -1,3 +1,4 @@
+import 'package:commerce_app/screen/cart/cart_screen.dart';
 import 'package:commerce_app/screen/home/home_screen.dart';
 import 'package:commerce_app/screen/main/widgets/main_widgets.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   final CategoryScreen _categoryScreen = const CategoryScreen();
   final HomeScreen _homeScreen = const HomeScreen();
+  final CartScreen _cartScreen = const CartScreen();
   final MainWidgets _mainWidgets = MainWidgets();
   int _currentIndex = 0;
 
@@ -34,6 +36,7 @@ class _MainScreenState extends State<MainScreen> {
         children: [
           _homeScreen,
           _categoryScreen,
+          _cartScreen,
         ],
       ),
       bottomNavigationBar: _mainWidgets.navigationItems(

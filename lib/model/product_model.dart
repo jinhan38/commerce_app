@@ -1,3 +1,5 @@
+// ignore_for_file: hash_and_equals
+
 class ProductModel {
   String image;
   String name;
@@ -5,6 +7,7 @@ class ProductModel {
   bool like;
   int reviewCount;
   double reviewRating;
+  bool cart = false;
 
   ProductModel({
     required this.image,
@@ -19,5 +22,16 @@ class ProductModel {
   String toString() {
     return 'ProductModel{image: $image, name: $name, price: $price, '
         'like: $like, reviewCount: $reviewCount, reviewRating: $reviewRating}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is ProductModel &&
+        image == other.image &&
+        name == other.name &&
+        price == other.price &&
+        like == other.like &&
+        reviewCount == other.reviewCount &&
+        reviewRating == other.reviewRating;
   }
 }

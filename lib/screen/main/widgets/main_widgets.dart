@@ -15,6 +15,10 @@ class MainWidgets {
           icon: Icon(Icons.category_outlined),
           label: '카테고리',
         ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.shopping_cart),
+          label: '장바구니',
+        ),
       ],
       currentIndex: currentIndex,
       selectedItemColor: Colors.indigo,

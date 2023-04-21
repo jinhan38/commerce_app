@@ -18,6 +18,8 @@ class HomeViewModel extends ChangeNotifier {
   final List<Widget> widgetList = [];
   final ValueNotifier<int> pageIndex = ValueNotifier(0);
 
+  void update() => notifyListeners();
+
   void init() {
     imageList.addAll(
       [
